@@ -1,0 +1,168 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* initialize color */
+:root {
+  --primary-color: black;
+  --secondary-color: #ff690c;
+  --third-color: #00aced;
+}
+/* CSS Normalisation  */
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: black;
+  background-image: url("../images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  opacity: 0.9;
+}
+
+h2 {
+  font-size: 2em;
+  color: var(--primary-color);
+}
+
+/* Mobile first breakpoint */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  border: 1px solid #ccc;
+  margin: 5% 5%;
+  padding: 3em 2em;
+  border-radius: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.content > img {
+  display: block;
+  width: 300px;
+  margin: 2em auto;
+}
+
+.content > h2 {
+  margin-bottom: 1em;
+  color: var(--primary-color);
+}
+
+.content label {
+  text-align: left;
+  margin-top: 0.7em;
+}
+
+.content textarea {
+  padding: 0.7em;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.content textarea:focus {
+  outline: none;
+  border-color: var(--third-color);
+}
+
+.content textarea:hover {
+  border-color: var(--third-color);
+  cursor: pointer;
+}
+
+.content button {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 1em;
+  border: 0px;
+}
+
+.content button:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+.column input {
+  padding: 0.7em;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  border-bottom: 2px solid var(--secondary-color);
+  outline: none;
+  background: transparent;
+  transition: 0.3s ease;
+  resize: none;
+}
+
+.column input:focus {
+  outline: none;
+  border-color: var(--third-color);
+}
+
+.column input:hover {
+  border-color: var(--third-color);
+  cursor: pointer;
+}
+
+.first-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.second-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile */
+@media (min-width: 908px) {
+  .content {
+    max-width: 70%;
+    margin: 5% auto;
+  }
+
+  .column {
+    flex-direction: row;
+    gap: 1em;
+  }
+
+  .first-column,
+  .second-column {
+    flex: 1;
+  }
+
+  .content > h2 {
+    font-size: 2.5em;
+  }
+}
