@@ -51,11 +51,6 @@ p {
   min-height: 100vh;
 }
 
-.form-group {
-  position: relative;
-  margin-bottom: 1.2em;
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -83,8 +78,8 @@ p {
 .content label {
   position: absolute;
   left: 9px;
-  top: 17px;
-  text-align: left;
+  top: 50%;
+  transform: translateY(-40%);
   font-size: 14px;
   color: var(--placeholder-color);
   transition: 0.25s ease;
@@ -95,19 +90,10 @@ input:focus + label,
 input:not(:placeholder-shown) + label,
 textarea:focus + label,
 textarea:not(:placeholder-shown) + label {
-  top: -16px;
+  top: -12px;
   left: 5px;
   font-size: 0.8em;
   color: var(--secondary-color);
-}
-
-textarea {
-  padding: 0.7em;
-  border: solid 1px #ccc;
-  border-radius: 0px;
-  width: 100%;
-  resize: none; /* no-sizing on textarea */
-  border-bottom: 2px solid var(--secondary-color);
 }
 
 textarea:focus,
@@ -138,13 +124,19 @@ button:hover {
 }
 
 /* Underline Animation */
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5em;
+  margin: 1.2em 0;
+}
 .form-group::after {
   content: "";
   position: absolute;
-  bottom: 19px;
+  bottom: 0;
   left: 0;
   width: 0%;
-  height: 3px;
+  height: 4px;
   background-color: var(--third-color);
   transition: all 0.3s ease;
 }
@@ -162,14 +154,15 @@ button:hover {
   flex: 1;
 }
 
-input {
+input,
+textarea {
   padding: 0.7em;
   border: solid 1px #ccc;
   border-radius: 0px;
   width: 100%;
   margin-top: 0.5em;
-  margin-bottom: 1.5em;
-  border-bottom: 2px solid var(--secondary-color);
+  /* margin-bottom: 1.5em; */
+  /* border-bottom: 2px solid var(--secondary-color); */
   outline: none;
   background: transparent;
   transition: 0.3s ease;
