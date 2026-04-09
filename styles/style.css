@@ -10,6 +10,7 @@
   --primary-color: black;
   --secondary-color: #ff690c;
   --third-color: #00aced;
+  --placeholder-color: #999;
 }
 /* CSS Normalisation  */
 body {
@@ -22,6 +23,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: 70% 50%;
   height: 100vh;
   margin: 0;
   opacity: 0.9;
@@ -32,6 +34,13 @@ h2 {
   color: var(--primary-color);
 }
 
+p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+
 /* Mobile first breakpoint */
 
 .wrapper {
@@ -40,6 +49,11 @@ h2 {
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.2em;
 }
 
 .content {
@@ -67,54 +81,91 @@ h2 {
 }
 
 .content label {
+  position: absolute;
+  left: 9px;
+  top: 17px;
   text-align: left;
-  margin-top: 0.7em;
+  font-size: 14px;
+  color: var(--placeholder-color);
+  transition: 0.25s ease;
+  pointer-events: none;
 }
 
-.content textarea {
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+  top: -16px;
+  left: 5px;
+  font-size: 0.8em;
+  color: var(--secondary-color);
+}
+
+textarea {
   padding: 0.7em;
   border: solid 1px #ccc;
-  border-radius: 5px;
+  border-radius: 0px;
   width: 100%;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  resize: none; /* no-sizing on textarea */
   border-bottom: 2px solid var(--secondary-color);
 }
 
-.content textarea:focus {
+textarea:focus,
+input:focus {
   outline: none;
   border-color: var(--third-color);
 }
-
-.content textarea:hover {
+textarea:hover,
+input:hover {
   border-color: var(--third-color);
   cursor: pointer;
 }
 
-.content button {
+button {
   margin-top: 1em;
   padding: 1em;
   background-color: var(--secondary-color);
   color: white;
   border-radius: 1em;
   border: 0px;
+  width: 100%;
+  transition: 0.3s ease;
 }
 
-.content button:hover {
+button:hover {
   cursor: pointer;
   background-color: var(--primary-color);
+}
+
+/* Underline Animation */
+.form-group::after {
+  content: "";
+  position: absolute;
+  bottom: 19px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--third-color);
+  transition: all 0.3s ease;
+}
+
+.form-group:focus-within::after {
+  width: 100%;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  margin-top: 2em;
 }
 
-.column input {
+.column .form-group {
+  flex: 1;
+}
+
+input {
   padding: 0.7em;
   border: solid 1px #ccc;
-  border-radius: 5px;
+  border-radius: 0px;
   width: 100%;
   margin-top: 0.5em;
   margin-bottom: 1.5em;
@@ -125,24 +176,13 @@ h2 {
   resize: none;
 }
 
-.column input:focus {
+input:focus {
   outline: none;
   border-color: var(--third-color);
 }
 
-.column input:hover {
-  border-color: var(--third-color);
+input:hover {
   cursor: pointer;
-}
-
-.first-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.second-column {
-  display: flex;
-  flex-direction: column;
 }
 
 /* Mobile */
@@ -155,11 +195,6 @@ h2 {
   .column {
     flex-direction: row;
     gap: 1em;
-  }
-
-  .first-column,
-  .second-column {
-    flex: 1;
   }
 
   .content > h2 {

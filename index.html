@@ -23,53 +23,60 @@
             love to hear from you, please complete the following information.
           </p>
           <div class="column">
-            <div class="first-column">
-              <label for="firstName">First Name:</label>
-              <input
-                type="text"
-                name="firstName"
-                id="firstName"
-                placeholder="Enter your first name"
-              />
-
+                <div class="form-group">
+                <input
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    placeholder=""
+                />
+                <label for="firstName">First Name:</label>
+                </div>
+            
+                <div class="form-group">
+              <input type="text" name="lastName" id="lastName" placeholder="" />
               <label for="lastName">Last Name:</label>
-              <input
-                type="text"
-                name="lastName"
-                id="lastName"
-                placeholder="Enter your last name"
-              />
+                </div>
             </div>
 
-            <div class="second-column">
-              <label for="contact">Contact Number</label>
-              <input
-                type="text"
-                name="contact"
-                id="contact"
-                placeholder="Enter your contact number"
-              />
+            <div class="column">
+              <div class="form-group">
+                <input type="text" name="contact" id="contact" placeholder="" />
+                <label for="contact">Contact Number</label>
+              </div>
 
-              <label for="email">Email</label>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                placeholder="Enter your email"
-              />
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder=" "
+                />
+                <label for="email">Email</label>
+              </div>
+            
             </div>
+           
+           <div class="form-group">
+             <textarea
+              name="message"
+              class="message"
+              id="message"
+              rows="5"
+              cols="30"
+              placeholder=" "
+            ></textarea>
+            <label for="message" class="label">Message:</label>
+           
+            </div>
+                   
+            <button type="submit" class="submit-btn">Submit</button>
+
+
           </div>
-          <label for="message" class="label">Message:</label>
-          <textarea
-            name="message"
-            class="message"
-            id="message"
-            rows="5"
-            cols="30"
-            placeholder="Enter your message"
-          ></textarea>
 
-          <button type="submit" class="submit-btn">Submit</button>
+      
+
         </div>
       </form>
     </main>
