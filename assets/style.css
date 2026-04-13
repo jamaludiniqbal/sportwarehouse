@@ -112,7 +112,7 @@ button {
   padding: 1em;
   background-color: var(--secondary-color);
   color: white;
-  border-radius: 1em;
+  /* border-radius: 1em; */
   border: 0px;
   width: 100%;
   transition: 0.3s ease;
@@ -121,6 +121,7 @@ button {
 button:hover {
   cursor: pointer;
   background-color: var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Underline Animation */
@@ -177,6 +178,28 @@ input:focus {
 input:hover {
   cursor: pointer;
 }
+
+.message {
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+  text-align: right;
+}
+
+.error {
+  border: 1px solid red;
+  transition: all 1s ease;
+}
+
+.success {
+  border: 1px solid var(--third-color);
+  transition: all 1s ease;
+}
+
+/* input.error ~ .message.error,
+textarea.error ~ .message.error {
+  display: block;
+} */
 
 /* Mobile */
 @media (min-width: 908px) {

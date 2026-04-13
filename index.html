@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Page</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+
   </head>
   <body>
     <header></header>
     <main class="wrapper">
-      <form action="#">
+      <form action="register.php" id="contactForm">
         <div class="content">
           <img
             src="images/sports-warehouse-logo-600.png"
@@ -31,11 +32,15 @@
                     placeholder=""
                 />
                 <label for="firstName">First Name:</label>
+
+                  <!-- <div class="message error">First name is required.</div> -->
+                     
                 </div>
             
                 <div class="form-group">
               <input type="text" name="lastName" id="lastName" placeholder="" />
               <label for="lastName">Last Name:</label>
+                              <small class="validation"></small>
                 </div>
             </div>
 
@@ -43,6 +48,7 @@
               <div class="form-group">
                 <input type="text" name="contact" id="contact" placeholder="" />
                 <label for="contact">Contact Number</label>
+                                <small class="validation"></small>
               </div>
 
               <div class="form-group">
@@ -53,6 +59,7 @@
                   placeholder=" "
                 />
                 <label for="email">Email</label>
+                <small class="validation"></small>
               </div>
             
             </div>
@@ -60,14 +67,14 @@
            <div class="form-group">
              <textarea
               name="message"
-              class="message"
+
               id="message"
               rows="5"
               cols="30"
               placeholder=" "
             ></textarea>
             <label for="message" class="label">Message:</label>
-           
+                           <small class="validation"></small>
             </div>
                    
             <button type="submit" class="submit-btn">Submit</button>
@@ -81,5 +88,6 @@
       </form>
     </main>
     <footer></footer>
+        <script src="assets/script.js"></script>
   </body>
 </html>
