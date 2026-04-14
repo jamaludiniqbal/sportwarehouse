@@ -12,6 +12,7 @@
   --third-color: #00aced;
   --placeholder-color: #999;
 }
+
 /* CSS Normalisation  */
 body {
   font-family: "Poppins", sans-serif;
@@ -29,11 +30,7 @@ body {
   opacity: 0.9;
 }
 
-h2 {
-  font-size: 2em;
-  color: var(--primary-color);
-}
-
+/* Paragraphs */
 p {
   font-size: 1rem;
   color: #666;
@@ -41,8 +38,7 @@ p {
   margin-bottom: 2em;
 }
 
-/* Mobile first breakpoint */
-
+/* Mobile first breakpoint (center) */
 .wrapper {
   display: flex;
   align-items: center;
@@ -51,6 +47,7 @@ p {
   min-height: 100vh;
 }
 
+/* Content Container */
 .content {
   display: flex;
   flex-direction: column;
@@ -64,17 +61,20 @@ p {
   background-color: white;
 }
 
+/* Styling  inside content */
+
+/* Image styling */
 .content > img {
   display: block;
   width: 300px;
   margin: 2em auto;
 }
-
+/* Heading */
 .content > h2 {
   margin-bottom: 1em;
   color: var(--primary-color);
 }
-
+/* Label Style  */
 .content label {
   position: absolute;
   left: 9px;
@@ -86,6 +86,7 @@ p {
   pointer-events: none;
 }
 
+/* Focus and non-empty label styles */
 input:focus + label,
 input:not(:placeholder-shown) + label,
 textarea:focus + label,
@@ -96,17 +97,21 @@ textarea:not(:placeholder-shown) + label {
   color: var(--secondary-color);
 }
 
+/* Focus Styles */
 textarea:focus,
 input:focus {
   outline: none;
   border-color: var(--third-color);
 }
+
+/* Hover Styles */
 textarea:hover,
 input:hover {
   border-color: var(--third-color);
   cursor: pointer;
 }
 
+/* Button Styles */
 button {
   margin-top: 1em;
   padding: 1em;
@@ -118,6 +123,7 @@ button {
   transition: 0.3s ease;
 }
 
+/* Button Hover Styles */
 button:hover {
   cursor: pointer;
   background-color: var(--primary-color);
@@ -155,6 +161,8 @@ button:hover {
   flex: 1;
 }
 
+/* Input and Textarea Styles */
+
 input,
 textarea {
   padding: 0.7em;
@@ -162,6 +170,7 @@ textarea {
   border-radius: 0px;
   width: 100%;
   margin-top: 0.5em;
+  font-family: "Poppins", sans-serif;
   /* margin-bottom: 1.5em; */
   /* border-bottom: 2px solid var(--secondary-color); */
   outline: none;
@@ -170,38 +179,43 @@ textarea {
   resize: none;
 }
 
+/* Focus Styles */
 input:focus {
   outline: none;
   border-color: var(--third-color);
 }
 
+/* Hover Styles */
 input:hover {
   cursor: pointer;
 }
 
-.message {
-  font-size: 12px;
-  margin-top: 5px;
-  display: none;
-  text-align: right;
+/* Error Message Styles */
+.error-message {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1em auto;
+  width: 100%;
 }
 
-.error {
-  border: 1px solid red;
-  transition: all 1s ease;
+/* Error Message List Styles */
+.error-message ul {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
 }
 
-.success {
-  border: 1px solid var(--third-color);
-  transition: all 1s ease;
+/* Error Message List Items */
+.error-message > ul > li {
+  font-size: 0.8em;
+  text-align: left;
+  color: black;
+  padding: 10px;
+  line-height: 1px;
 }
 
-/* input.error ~ .message.error,
-textarea.error ~ .message.error {
-  display: block;
-} */
-
-/* Mobile */
+/* Media Query for Larger Screens */
 @media (min-width: 908px) {
   .content {
     max-width: 70%;
